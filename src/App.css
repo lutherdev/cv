@@ -200,3 +200,37 @@ body {
   background: var(--black);
   color: var(--white);
 }
+
+@media (max-width: 600px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .section-label {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-header {
+    flex-direction: column;
+  }
+
+  .cv-contact {
+    align-items: flex-start;
+    white-space: normal;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .card {
+    margin: 1rem;
+  }
+
+  .card-header,
+  .section {
+    padding: 1rem;
+  }
+}
