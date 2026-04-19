@@ -1,42 +1,202 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e8e8e8;
+  --gray-400: #aaaaaa;
+  --gray-600: #555555;
+}
+
+body {
+  background-color: var(--gray-100);
+  font-family: "DM Mono", monospace;
+  min-height: 100vh;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
-  padding: 2em;
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 6px 6px 0px var(--black);
+  animation: fadeUp 0.5s ease both;
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem 2rem 1.75rem;
+  gap: 2rem;
+}
+
+.card-img{
+  max-width: 120px;
+  min-width: 80px;
+  display: inline-block;
+  border: solid black 1px;
+}
+
+.cv-img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cv-name {
+  font-family: "Syne", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.cv-title {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--gray-600);
+}
+
+.cv-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.divider {
+  height: 1.5px;
+  background: var(--black);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+}
+
+.section-row {
+  align-items: center;
+}
+
+.section-label {
+  font-family: "Syne", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  padding-top: 0.15rem;
+}
+
+.summary {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--gray-600);
+  white-space: pre-line;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.entry {
+  padding: 0.9rem 0.75rem;
+  margin: 0 -0.75rem;
+  transition: background 0.15s ease;
+  border-radius: 2px;
+}
+
+.entry.active {
+  background: var(--gray-100);
+}
+
+.entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.entry-role {
+  font-family: "Syne", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-right: 0.6rem;
+}
+
+.entry-company {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray-600);
+}
+
+.entry-period {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--gray-400);
+  white-space: nowrap;
+}
+
+.entry-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  border: 1.5px solid var(--black);
+  padding: 0.3rem 0.7rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background: var(--black);
+  color: var(--white);
 }
